@@ -652,4 +652,20 @@ mod tests {
         let args = Args::parse(command.get_matches_from(args));
         assert_eq!(args.theme, "default");
     }
+
+    #[test]
+    fn test_parse_with_synthwave_theme() {
+        let args = vec![
+            "doit",
+            "--start",
+            "2025-01-01 10:20:30",
+            "--end",
+            "2025-01-31 23:59:59",
+            "--theme",
+            "synthwave",
+        ];
+        let command = build_command();
+        let args = Args::parse(command.get_matches_from(args));
+        assert_eq!(args.theme, "synthwave");
+    }
 }

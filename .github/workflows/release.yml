@@ -116,13 +116,43 @@ jobs:
           tag_name: ${{ steps.get_tag.outputs.tag }}
           name: Release ${{ steps.get_tag.outputs.tag }}
           body: |
-            ## Changes in ${{ steps.get_tag.outputs.tag }}
+            ## 🎉 New in v0.6.2: Synthwave Theme! ⚡
 
-            - Build artifacts for multiple platforms
-            - Cross-platform compatibility improvements
-            - Performance optimizations and bug fixes
+            ### 🌈 Introducing the Synthwave Theme
+            
+            Experience your progress in style with the brand new **synthwave theme** - featuring neon colors and retro-futuristic aesthetics!
 
-            ## Installation
+            ```bash
+            doit --theme synthwave --start "2025-01-01 00:00" --end "2025-12-31 23:59" --title "JUST DO IT"
+            ```
+
+            **Features:**
+            - 🎨 **Neon Color Scheme**: Dark purple background with cyan/teal borders and hot pink progress bars
+            - ⚡ **Energy Messages**: Motivational lightning bolt messages to keep you energized
+            - 📐 **Box Drawing Characters**: Clean Unicode borders for a polished terminal experience
+            - 🎭 **Three Theme Options**: Choose from `default`, `retro`, or `synthwave` themes
+
+            ### 🚀 What's Changed in v0.6.2
+
+            - **✨ NEW**: Synthwave theme with neon colors and retro-futuristic design
+            - 🎨 Enhanced visual theming system with better color customization
+            - 🔧 Build artifacts for multiple platforms
+            - 🖥️ Cross-platform compatibility improvements
+            - ⚡ Performance optimizations and bug fixes
+
+            ### 🎯 Theme Examples
+
+            **Synthwave Theme:**
+            ```
+            ═ JUST DO IT ═
+            ╔════════════════════════════════════════════════════════════════════════════╗
+            ║ 2025-01-01 00:00  ████████████████████████░░░░░░░░░░░░░░  2025-12-31 23:59 ║
+            ║                   62% | 227 d elapsed | 137 d 11 h remaining               ║
+            ╚════════════════════════════════════════════════════════════════════════════╝
+                                   ⚡ KEEP THE ENERGY FLOWING ⚡
+            ```
+
+            ## 📦 Installation
 
             Download the appropriate binary for your platform from the assets below.
 
@@ -137,7 +167,7 @@ jobs:
             ### Windows
             - `doit-windows-x86_64.exe` - For 64-bit Windows systems
 
-            ## Usage
+            ## 🚀 Usage
 
             After downloading, make the binary executable (Linux/macOS):
             ```bash
@@ -145,10 +175,21 @@ jobs:
             ./doit-* --help
             ```
 
-            For Windows, run directly:
-            ```cmd
-            doit-windows-x86_64.exe --help
+            **Try the new Synthwave theme:**
+            ```bash
+            ./doit-* --theme synthwave --start "now" --duration 2h --title "Deep Work"
             ```
+
+            For Windows:
+            ```cmd
+            doit-windows-x86_64.exe --theme synthwave --start "now" --duration 2h --title "Focus Session"
+            ```
+
+            ## 🎭 Available Themes
+
+            - **`default`** - Clean, minimal progress display
+            - **`retro`** - Terminal-style with brackets and status messages  
+            - **`synthwave`** ⭐ **NEW!** - Neon colors with retro-futuristic aesthetics
           files: target/${{ matrix.target }}/release/${{ matrix.artifact_name }}
           draft: false
           prerelease: false
